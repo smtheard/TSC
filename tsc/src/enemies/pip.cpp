@@ -161,11 +161,13 @@ void cPip::DownGrade(bool force /* = false */)
 
             // Accelerate us up-left
             m_pos_y -= 5.0f;
+            m_pos_x += m_images[10].m_image->m_col_w;
             m_velx = -15.0f;
             m_vely = -15.0f;
 
             // Accelerate the new one up-right
             p_newpip->m_pos_y -= 60;
+            p_newpip->m_pos_x += m_images[10].m_image->m_col_w;
             p_newpip->m_velx = 15.0f; // Opposite direction than above!
             p_newpip->m_vely = -15.0f;
             m_sprite_manager->Add(p_newpip);
